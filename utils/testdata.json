@@ -1,0 +1,26 @@
+{
+    "login": {
+        "username": "Anju12345",
+        "password": "Test@123"
+    },
+
+    "signup": {
+        "password": "Test@123"
+    },
+
+    "customer": {
+        "name": "Anju",
+        "country": "India",
+        "city": "Kochi",
+        "creditcard": "123456789",
+        "month": "10",
+        "year": "2026"
+    },
+
+    "invalidusername": "abc",
+    "invalidpassword": "12345",
+
+    "productname": "Nokia lumia 1520",
+    "mobileproduct": "Samsung galaxy s6",
+    "monitorproduct": "Apple monitor 24"
+}
