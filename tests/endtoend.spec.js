@@ -1,11 +1,14 @@
-/*import { test } from "@playwright/test"
+import { test } from "@playwright/test"
 import { PageManager } from "../pages/PageManager"
 import testdata from "../utils/testdata.json" with { type: "json" }
 
 
-test.describe.serial("Demoblaze End to End", () => {
+test.describe("Demoblaze end to end workflow", () => {
 
-  
+    test.describe.configure({ mode: "serial" })
+
+
+    // Valid Login
     test("Valid Login", async ({ page }) => {
 
         let pagemanager = new PageManager(page)
@@ -23,7 +26,7 @@ test.describe.serial("Demoblaze End to End", () => {
     })
 
 
-    
+    //  Phone Purchase
     test("Phone Purchase", async ({ page }) => {
 
         let pagemanager = new PageManager(page)
@@ -33,7 +36,6 @@ test.describe.serial("Demoblaze End to End", () => {
         const cartpage = pagemanager.getcartpage()
         const checkoutpage = pagemanager.getcheckoutpage()
 
-        
         await loginpage.gotourl()
         await loginpage.clickloginlink()
 
@@ -42,25 +44,20 @@ test.describe.serial("Demoblaze End to End", () => {
             testdata.login.password
         )
 
-        
         await productpage.selectphones()
         await productpage.selectmobileproduct(testdata.mobileproduct)
-
-       
         await productpage.addtocart()
         await productpage.clickok()
 
-       
         await cartpage.clickcart()
         await cartpage.clickplaceorder()
 
-      
         await checkoutpage.enterdetails(testdata.customer)
         await checkoutpage.clickpurchase()
 
-       
         await checkoutpage.verifythanksmessage()
         await checkoutpage.clickok()
+
     })
 
-})*/
+})

@@ -18,7 +18,7 @@ test("Sign Up", async ({ page }) => {
 
     //await page.pause()
 
-    await signuppage.clicksignup()
+  await signuppage.clicksignup()
 })
 
 
