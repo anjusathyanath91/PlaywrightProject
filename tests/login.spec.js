@@ -12,7 +12,9 @@ test("Valid Login", async ({ page }) => {
     await loginpage.gotourl()
     await loginpage.clickloginlink()
 
-    await loginpage.validateuser(testdata.login.username,testdata.login.password)
+    await loginpage.enterusername(testdata.login.username)
+    await loginpage.enterpassword(testdata.login.password)
+    await loginpage.clicklogin()
 
 })
 
@@ -26,7 +28,9 @@ test("Invalid Username + Valid Password", async ({ page }) => {
     await loginpage.gotourl()
     await loginpage.clickloginlink()
 
-    await loginpage.invalidusername(testdata.invalidusername,testdata.login.password)
+    await loginpage.enterusername(testdata.invalidusername)
+    await loginpage.enterpassword(testdata.login.password)
+    await loginpage.clicklogin()
 
 })
 
@@ -40,7 +44,9 @@ test("Valid Username + Invalid Password", async ({ page }) => {
     await loginpage.gotourl()
     await loginpage.clickloginlink()
 
-    await loginpage.invalidpassword(testdata.login.username,testdata.invalidpassword)
+    await loginpage.enterusername(testdata.login.username)
+    await loginpage.enterpassword(testdata.invalidpassword)
+    await loginpage.clicklogin()
 
 })
 
@@ -54,7 +60,9 @@ test("Invalid Username + Invalid Password", async ({ page }) => {
     await loginpage.gotourl()
     await loginpage.clickloginlink()
 
-    await loginpage.invalidunameandpwd(testdata.invalidusername,testdata.invalidpassword)
+    await loginpage.enterusername(testdata.invalidusername)
+    await loginpage.enterpassword(testdata.invalidpassword)
+    await loginpage.clicklogin()
 
 })
 
@@ -68,7 +76,9 @@ test("Valid Login -> Logout", async ({ page }) => {
     await loginpage.gotourl()
     await loginpage.clickloginlink()
 
-    await loginpage.validateuser(testdata.login.username,testdata.login.password)
+    await loginpage.enterusername(testdata.login.username)
+    await loginpage.enterpassword(testdata.login.password)
+    await loginpage.clicklogin()
 
     await loginpage.clicklogout()
 

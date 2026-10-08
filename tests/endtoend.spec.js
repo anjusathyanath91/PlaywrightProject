@@ -1,4 +1,4 @@
-import { test } from "@playwright/test"
+/*import { test } from "@playwright/test"
 import { PageManager } from "../pages/PageManager"
 import testdata from "../utils/testdata.json" with { type: "json" }
 
@@ -18,15 +18,14 @@ test.describe("Demoblaze end to end workflow", () => {
         await loginpage.gotourl()
         await loginpage.clickloginlink()
 
-        await loginpage.validateuser(
-            testdata.login.username,
-            testdata.login.password
-        )
+        await loginpage.enterusername(testdata.login.username)
+        await loginpage.enterpassword(testdata.login.password)
+        await loginpage.clicklogin()
 
     })
 
 
-    //  Phone Purchase
+    // Phone Purchase
     test("Phone Purchase", async ({ page }) => {
 
         let pagemanager = new PageManager(page)
@@ -39,10 +38,9 @@ test.describe("Demoblaze end to end workflow", () => {
         await loginpage.gotourl()
         await loginpage.clickloginlink()
 
-        await loginpage.validateuser(
-            testdata.login.username,
-            testdata.login.password
-        )
+        await loginpage.enterusername(testdata.login.username)
+        await loginpage.enterpassword(testdata.login.password)
+        await loginpage.clicklogin()
 
         await productpage.selectphones()
         await productpage.selectmobileproduct(testdata.mobileproduct)
@@ -60,4 +58,4 @@ test.describe("Demoblaze end to end workflow", () => {
 
     })
 
-})
+})*/

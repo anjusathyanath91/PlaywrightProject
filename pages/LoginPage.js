@@ -1,10 +1,8 @@
-import { expect } from "@playwright/test"
-
 export class LoginPage {
     constructor(page) {
         this.page = page
         this.username = page.locator("#loginusername")
-        this.Password = page.locator("#loginpassword")
+        this.password = page.locator("#loginpassword")
         this.login_link = page.locator("#login2")
         this.login_button = page.locator('button[onclick="logIn()"]')
         this.logout_link = page.locator("#logout2")
@@ -18,27 +16,15 @@ export class LoginPage {
         await this.login_link.click()
     }
 
-    async validateuser(uname, pwd) {
+    async enterusername(uname) {
         await this.username.fill(uname)
-        await this.Password.fill(pwd)
-        await this.login_button.click()
     }
 
-    async invalidusername(invaliduname, pwd) {
-        await this.username.fill(invaliduname)
-        await this.Password.fill(pwd)
-        await this.login_button.click()
+    async enterpassword(pwd) {
+        await this.password.fill(pwd)
     }
 
-    async invalidpassword(uname, invalidpwd) {
-        await this.username.fill(uname)
-        await this.Password.fill(invalidpwd)
-        await this.login_button.click()
-    }
-
-    async invalidunameandpwd(invaliduname, invalidpwd) {
-        await this.username.fill(invaliduname)
-        await this.Password.fill(invalidpwd)
+    async clicklogin() {
         await this.login_button.click()
     }
 

@@ -13,7 +13,10 @@ test("Login -> Select any Product -> Add to Cart -> Click OK", async ({ page }) 
 
     await loginpage.gotourl()
     await loginpage.clickloginlink()
-    await loginpage.validateuser(testdata.login.username, testdata.login.password)
+
+    await loginpage.enterusername(testdata.login.username)
+    await loginpage.enterpassword(testdata.login.password)
+    await loginpage.clicklogin()
 
     await productpage.selectproduct(testdata.productname)
     await productpage.addtocart()
@@ -35,7 +38,10 @@ test("Login -> Phones -> Select any phone -> Add to Cart -> Click OK -> Cart -> 
 
     await loginpage.gotourl()
     await loginpage.clickloginlink()
-    await loginpage.validateuser(testdata.login.username, testdata.login.password)
+
+    await loginpage.enterusername(testdata.login.username)
+    await loginpage.enterpassword(testdata.login.password)
+    await loginpage.clicklogin()
 
     await productpage.selectphones()
     await productpage.selectmobileproduct(testdata.mobileproduct)
@@ -65,7 +71,10 @@ test("Login -> Monitors -> Select any monitor -> Add to Cart -> Click OK -> Cart
 
     await loginpage.gotourl()
     await loginpage.clickloginlink()
-    await loginpage.validateuser(testdata.login.username, testdata.login.password)
+
+    await loginpage.enterusername(testdata.login.username)
+    await loginpage.enterpassword(testdata.login.password)
+    await loginpage.clicklogin()
 
     await productpage.selectmonitors()
     await productpage.selectmonitorproduct(testdata.monitorproduct)
